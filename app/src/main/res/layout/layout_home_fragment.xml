@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/stock_item"
+        android:background="@color/white"
+        tools:itemCount="3"
+        app:layout_constraintBottom_toTopOf="@+id/bottomTappableView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomTappableView"
+        android:layout_width="match_parent"
+        android:animateLayoutChanges="true"
+        android:layout_height="wrap_content"
+        android:background="@drawable/upper_curve_grey_background"
+        android:padding="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/currentValueHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/current_value"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/totalInvestmentHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/total_investment"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@+id/currentValueHeadingTextView"
+            app:layout_constraintTop_toBottomOf="@+id/currentValueHeadingTextView" />
+
+        <TextView
+            android:id="@+id/todayProfitLossHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/today_s_profit_loss"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@+id/totalInvestmentHeadingTextView"
+            app:layout_constraintTop_toBottomOf="@+id/totalInvestmentHeadingTextView" />
+
+        <TextView
+            android:id="@+id/currentValueValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/current_value"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/totalInvestmentValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/current_value"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/totalInvestmentHeadingTextView"
+            app:layout_constraintEnd_toEndOf="@+id/currentValueValueTextView"
+            app:layout_constraintTop_toTopOf="@+id/totalInvestmentHeadingTextView" />
+
+        <TextView
+            android:id="@+id/todayProfitLossValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/current_value"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/todayProfitLossHeadingTextView"
+            app:layout_constraintEnd_toEndOf="@+id/totalInvestmentValueTextView"
+            app:layout_constraintTop_toTopOf="@+id/todayProfitLossHeadingTextView" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="totalInvestmentHeadingTextView,todayProfitLossValueTextView,currentValueHeadingTextView,todayProfitLossHeadingTextView,currentValueValueTextView,totalInvestmentValueTextView" />
+
+        <TextView
+            android:id="@+id/profitLossExpandableTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackgroundBorderless"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:onClick="onClick"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingStart="@dimen/_1sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text="@string/profit_loss"
+            android:textSize="@dimen/_12sdp"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow"
+            app:layout_constraintStart_toStartOf="@+id/todayProfitLossHeadingTextView"
+            app:layout_constraintTop_toBottomOf="@+id/todayProfitLossHeadingTextView"
+            tools:ignore="UsingOnClickInXml" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

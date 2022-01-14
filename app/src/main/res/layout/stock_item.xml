@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:onClick="onClick"
+    android:id="@+id/container"
+    android:padding="@dimen/_10sdp"
+    tools:ignore="UsingOnClickInXml">
+
+    <TextView
+        android:id="@+id/headingTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:fontFamily="@font/roboto_medium"
+        android:padding="@dimen/_2sdp"
+        tools:text="string/app_name string/app_name string/app_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toStartOf="@+id/ltpHeadingTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ltpValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:fontFamily="@font/roboto"
+        android:padding="@dimen/_1sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Rs 119.50" />
+
+    <TextView
+        android:id="@+id/pnlValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:fontFamily="@font/roboto"
+        android:padding="@dimen/_1sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/netQuantityTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/netQuantityTextView"
+        tools:text="Rs 119.50" />
+
+    <TextView
+        android:id="@+id/ltpHeadingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:fontFamily="@font/roboto_light"
+        android:padding="@dimen/_1sdp"
+        android:text="@string/ltp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/ltpValueTextView"
+        app:layout_constraintEnd_toStartOf="@+id/ltpValueTextView"
+        app:layout_constraintTop_toTopOf="@+id/ltpValueTextView" />
+
+    <TextView
+        android:id="@+id/pnlHeadingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:fontFamily="@font/roboto_light"
+        android:padding="@dimen/_1sdp"
+        android:text="@string/pnl"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/pnlValueTextView"
+        app:layout_constraintEnd_toStartOf="@+id/pnlValueTextView"
+        app:layout_constraintTop_toTopOf="@+id/pnlValueTextView" />
+
+    <TextView
+        android:id="@+id/netQuantityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:clickable="false"
+        android:fontFamily="@font/roboto"
+        android:padding="@dimen/_2sdp"
+        android:text="@string/net_qty"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintStart_toStartOf="@+id/headingTextView"
+        app:layout_constraintTop_toBottomOf="@+id/headingTextView" />
+
+    <TextView
+        android:id="@+id/quantityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:clickable="false"
+        android:fontFamily="@font/roboto_medium"
+        android:padding="@dimen/_2sdp"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/netQuantityTextView"
+        app:layout_constraintStart_toEndOf="@+id/netQuantityTextView"
+        app:layout_constraintTop_toBottomOf="@+id/headingTextView"
+        tools:text="3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
